@@ -1,0 +1,21 @@
+{
+  "name": "uglify-es-lib",
+  "description": "uglify-es as precompiled single-file library",
+  "author": "Mihai Bazon <mihai.bazon@gmail.com> (http://lisperator.net/)",
+  "maintainers": [ "Rasmus Andersson <me@rsms.me>" ],
+  "license": "BSD-2-Clause",
+  "version": "3.3.9",
+  "engines": { "node": ">=0.8.0" },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build-g": "node gen.js > index.g.js",
+    "build": "node gen.js > index.g.js && ./uglify-es/bin/uglifyjs --compress --mangle --ecma 7 -o index.js -- index.g.js && cp node_modules/uglify-es/LICENSE LICENSE"
+  },
+  "devDependencies": {
+    "uglify-es": "^3.3.9"
+  }
+}
