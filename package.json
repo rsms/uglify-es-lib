@@ -4,7 +4,7 @@
   "author": "Mihai Bazon <mihai.bazon@gmail.com> (http://lisperator.net/)",
   "maintainers": [ "Rasmus Andersson <me@rsms.me>" ],
   "license": "BSD-2-Clause",
-  "version": "3.3.9",
+  "version": "0.1.0+3.3.9",
   "engines": { "node": ">=0.8.0" },
   "main": "index.js",
   "files": [
