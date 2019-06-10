@@ -10,14 +10,16 @@
   "engines": {
     "node": ">=0.8.0"
   },
-  "main": "index.js",
+  "main": "uglify-es.js",
   "files": [
-    "index.js",
+    "uglify-es.js",
+    "uglify-es.d.ts",
+    "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build-g": "node gen.js > index.g.js",
-    "build": "node gen.js > index.g.js && uglifyjs --compress --mangle --ecma 7 -o index.js -- index.g.js && cp node_modules/uglify-es/LICENSE LICENSE"
+    "build-g": "node gen.js",
+    "build": "node gen.js && uglifyjs --compress --mangle --ecma 7 -o uglify-es.js -- uglify-es.g.js && cp node_modules/uglify-es/LICENSE LICENSE"
   },
   "dependencies": {
     "source-map": "~0.6.1"

@@ -22,7 +22,7 @@ let sources = [
 let js = sources.map(readfile).join('\n')
 
 // fetch types
-const typeFile = fs.createWriteStream(__dirname + "/index.d.ts", {
+const typeFile = fs.createWriteStream(__dirname + "/uglify-es.d.ts", {
   flags: "w",
   encoding: "utf8",
 })
@@ -43,11 +43,11 @@ http.get(typingsUrl, res => {
 //   "var UglifyJS = exports;\n" + js +
 //   readfile("node_modules/uglify-es/tools/exports.js")
 // )
-// fs.writeFileSync(__dirname + "/index.g.js", js5, "utf8")
+// fs.writeFileSync(__dirname + "/uglify-es.g.js", js5, "utf8")
 
 // generate es6 file
 let es = (
   "import MOZ_SourceMap from 'source-map';\n" +
   js + readfile("exports-es.js")
 )
-fs.writeFileSync(__dirname + "/index.g.js", es, "utf8")
+fs.writeFileSync(__dirname + "/uglify-es.g.js", es, "utf8")
