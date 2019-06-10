@@ -11,20 +11,23 @@
     "node": ">=0.8.0"
   },
   "main": "uglify-es.js",
+  "browser": "uglify-es.umd.js",
+  "types": "uglify-es.d.ts",
   "files": [
-    "uglify-es.js",
     "uglify-es.d.ts",
+    "uglify-es.js",
+    "uglify-es.js.map",
+    "uglify-es.umd.js",
+    "uglify-es.umd.js.map",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build-g": "node gen.js",
-    "build": "node gen.js && uglifyjs --compress --mangle --ecma 7 -o uglify-es.js -- uglify-es.g.js && cp node_modules/uglify-es/LICENSE LICENSE"
-  },
-  "dependencies": {
-    "source-map": "~0.6.1"
+    "build": "bash -e build.sh",
+    "update-type-defs": "node update-type-defs.js"
   },
   "devDependencies": {
+    "rollup": "^1.14.6",
     "uglify-es": "^3.3.9"
   }
 }
