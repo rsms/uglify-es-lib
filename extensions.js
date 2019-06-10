@@ -35,4 +35,3 @@ function describe_ast() {
   doitem(AST_Node);
   return out + "\n";
 }
-exports.describe_ast = describe_ast
